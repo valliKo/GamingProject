@@ -335,3 +335,4 @@ C:\Users\valli_kotha\source\repos\GamingProject\GameProjectTest\obj\Debug\net8.0
 C:\Users\valli_kotha\source\repos\GamingProject\GameProjectTest\obj\Debug\net8.0\GameProjectTest.pdb
 C:\Users\valli_kotha\source\repos\GamingProject\GameProjectTest\obj\Debug\net8.0\GameProjectTest.genruntimeconfig.cache
 C:\Users\valli_kotha\source\repos\GamingProject\GameProjectTest\obj\Debug\net8.0\ref\GameProjectTest.dll
+C:\Users\valli_kotha\source\repos\GamingProject\GameProjectTest\bin\Debug\net8.0\GamingProject.xml

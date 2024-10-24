@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "/IJDtq33T1Q=",
+  "dgSpecHash": "jHFg2OJnFR0=",
   "success": true,
   "projectFilePath": "C:\\Users\\valli_kotha\\source\\repos\\GamingProject\\GamingProject\\GamingProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\valli_kotha\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\valli_kotha\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\valli_kotha\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\valli_kotha\\.nuget\\packages\\fakeiteasy\\8.3.0\\fakeiteasy.8.3.0.nupkg.sha512",
     "C:\\Users\\valli_kotha\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\valli_kotha\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\valli_kotha\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

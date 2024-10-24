@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GamingProject</name>
+    </assembly>
+    <members>
+        <member name="T:GamingProject.Controllers.GamesController">
+            <summary>
+            Add Controller
+            </summary>
+            <param name="gameInterface"></param>
+        </member>
+        <member name="M:GamingProject.Controllers.GamesController.#ctor(GamingProject.Repository.IGameInterface)">
+            <summary>
+            Add Controller
+            </summary>
+            <param name="gameInterface"></param>
+        </member>
+        <member name="M:GamingProject.Controllers.GamesController.Create(GamingProject.Model.Game)">
+            <summary>
+            add Game Details
+            </summary>
+            <param name="game"></param>
+            <returns> returns created status</returns>
+        </member>
+        <member name="M:GamingProject.Controllers.GamesController.UpdateGameDetails(GamingProject.Model.Game)">
+            <summary>
+            Update particular Game Details based on Id
+            </summary>
+            <param name="game"></param>
+            <returns> returns Ok Result</returns>
+        </member>
+        <member name="M:GamingProject.Controllers.GamesController.DeleteGame(System.Int32)">
+            <summary>
+            Delete Particular Game Data based on Id
+            </summary>
+            <param name="id"></param>
+            <returns> returns NoContent Status</returns>
+        </member>
+        <member name="M:GamingProject.Controllers.GamesController.GetGames">
+            <summary>
+            Get All the Games Details
+            </summary>
+            <returns> returns all the Games data</returns>
+        </member>
+        <member name="M:GamingProject.Controllers.GamesController.GetGameDetailsByPage(System.Int32,System.Int32)">
+            <summary>
+            returns Gaming Details by Pagination
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns> returns gameing details based on page number</returns>
+        </member>
+        <member name="T:GamingProject.Migrations.init">
+            <inheritdoc />
+        </member>
+        <member name="M:GamingProject.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GamingProject.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GamingProject.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GamingProject.Model.Game">
+            <summary>
+            Game Model
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.Game.ReleaseDate">
+            <summary>
+            Game Release Date 
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.Game.ID">
+            <summary>
+            Game ID Unique Identifier
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.Game.Title">
+            <summary>
+            Title of the Game
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.Game.Genre">
+            <summary>
+            Game catagerory
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.Game.Description">
+            <summary>
+            Game Description
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.Game.Price">
+            <summary>
+            Price of the Game
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.Game.StockQuantity">
+            <summary>
+            Available Stock Quantity
+            </summary>
+        </member>
+        <member name="T:GamingProject.Model.PaginatedList`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:GamingProject.Model.PaginatedList`1.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.PaginatedList`1.PageIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.PaginatedList`1.TotalPages">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.PaginatedList`1.HasPreviousPage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GamingProject.Model.PaginatedList`1.HasNextPage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GamingProject.Model.PaginatedList`1.#ctor(System.Collections.Generic.List{`0},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="items"></param>
+            <param name="pageIndex"></param>
+            <param name="totalPages"></param>
+        </member>
+        <member name="T:GamingProject.Repository.GameRepository">
+            <summary>
+            Inherit Game Interface
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:GamingProject.Repository.GameRepository.#ctor(GamingProject.Data.GamingProjectContext)">
+            <summary>
+            Inherit Game Interface
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:GamingProject.Repository.GameRepository.CreateAsync(GamingProject.Model.Game)">
+            <summary>
+            Implement Create Method
+            </summary>
+            <param name="game"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.GameRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Implement Delete Method
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.GameRepository.GetAllAsync">
+            <summary>
+            Implement Get Game Details Method
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.GameRepository.UpdateAsync(GamingProject.Model.Game)">
+            <summary>
+            Implement Update Method
+            </summary>
+            <param name="game"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.GameRepository.GetGames(System.Int32,System.Int32)">
+            <summary>
+            Implement Pagination Method, requires pageIndex and pageSize
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GamingProject.Repository.IGameInterface">
+            <summary>
+            Create Interface
+            </summary>
+        </member>
+        <member name="M:GamingProject.Repository.IGameInterface.CreateAsync(GamingProject.Model.Game)">
+            <summary>
+            
+            </summary>
+            <param name="game"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.IGameInterface.UpdateAsync(GamingProject.Model.Game)">
+            <summary>
+            
+            </summary>
+            <param name="game"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.IGameInterface.DeleteAsync(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.IGameInterface.GetAllAsync">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GamingProject.Repository.IGameInterface.GetGames(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -54,8 +54,10 @@ namespace GameProjectTest.ControllerTests
             A.CallTo(() => gameInterface.GetAllAsync()).Returns(GameDetails);
             var result = (OkObjectResult)await gamesController.GetGames();
 
+             var resultSet= (List<Game>)result?.Value!;
             //Assert
-            result.StatusCode.Should().Be(StatusCodes.Status200OK);
+            result?.StatusCode.Should().Be(StatusCodes.Status200OK);
+            resultSet?.ElementAt(0)?.Title?.Equals(GameDetails.ElementAt(0).Title);
             result.Should().NotBeNull();
         }
 
@@ -68,7 +70,7 @@ namespace GameProjectTest.ControllerTests
 
             //Act
             A.CallTo(() => gameInterface.UpdateAsync(GameDetails)).Returns(true);
-            var result = (OkResult)await gamesController.UpdateGameeDetails(GameDetails);
+            var result = (OkResult)await gamesController.UpdateGameDetails(GameDetails);
 
             //Assert
             result.StatusCode.Should().Be(200);
@@ -103,6 +105,7 @@ namespace GameProjectTest.ControllerTests
 
             //Assert
             result.StatusCode.Should().Be(StatusCodes.Status200OK);
+ 
             result.Should().NotBeNull();
         }
     }

@@ -5,15 +5,28 @@ using System.Numerics;
 
 namespace GamingProject.Repository
 {
+    /// <summary>
+    /// Inherit Game Interface
+    /// </summary>
+    /// <param name="context"></param>
     public class GameRepository(GamingProjectContext context) : IGameInterface
     {
+        /// <summary>
+        /// Implement Create Method
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public async Task<bool> CreateAsync(Game game)
         {
             context.Game.Add(game);
             var result = await context.SaveChangesAsync();
             return result > 0;
         }
-
+        /// <summary>
+        /// Implement Delete Method
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<bool> DeleteAsync(int id)
         {
             var getGame = await context.Game.FirstOrDefaultAsync(s => s.ID == id);
@@ -25,10 +38,17 @@ namespace GamingProject.Repository
             }
             return false;
         }
-
+        /// <summary>
+        /// Implement Get Game Details Method
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Game>> GetAllAsync()
         => await context!.Game.ToListAsync();
-
+        /// <summary>
+        /// Implement Update Method
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateAsync(Game game)
         {
             var getGame = await context.Game.FirstOrDefaultAsync(s => s.ID == game.ID);
@@ -45,7 +65,12 @@ namespace GamingProject.Repository
             }
             return false;
         }
-
+        /// <summary>
+        /// Implement Pagination Method, requires pageIndex and pageSize
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         public async Task<PaginatedList<Game>> GetGames(int pageIndex, int pageSize)
         {
             var games = await context.Game

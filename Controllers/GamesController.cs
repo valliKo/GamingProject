@@ -11,11 +11,20 @@ using GamingProject.Repository;
 
 namespace GamingProject.Controllers
 {
+    /// <summary>
+    /// Add Controller
+    /// </summary>
+    /// <param name="gameInterface"></param>
     [Route("[controller]")]
     [ApiController]
     public class GamesController(IGameInterface gameInterface) : ControllerBase
     {
         //Create
+        /// <summary>
+        /// add Game Details
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns> returns created status</returns>
         [HttpPost("add")]
         public async Task<IActionResult> Create(Game game)
         {
@@ -26,8 +35,13 @@ namespace GamingProject.Controllers
                 return BadRequest();
         }
         //update
+        /// <summary>
+        /// Update particular Game Details based on Id
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns> returns Ok Result</returns>
         [HttpPut("update")]
-        public async Task<IActionResult> UpdateGameeDetails(Game game)
+        public async Task<IActionResult> UpdateGameDetails(Game game)
         {
             var result = await gameInterface.UpdateAsync(game);
             if (result)
@@ -37,6 +51,11 @@ namespace GamingProject.Controllers
         }
 
         //Delete
+        /// <summary>
+        /// Delete Particular Game Data based on Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> returns NoContent Status</returns>
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteGame(int id)
         {
@@ -48,6 +67,10 @@ namespace GamingProject.Controllers
         }
 
         //Read All
+        /// <summary>
+        /// Get All the Games Details
+        /// </summary>
+        /// <returns> returns all the Games data</returns>
         [HttpGet("get")]
         public async Task<IActionResult> GetGames()
         {
@@ -59,9 +82,14 @@ namespace GamingProject.Controllers
         }
 
         //pagination
-
+        /// <summary>
+        /// returns Gaming Details by Pagination
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns> returns gameing details based on page number</returns>
         [HttpGet("getByPage")]
-        public async Task<ActionResult> GetGameDetailsByPage(int pageIndex , int pageSize)
+        public async Task<ActionResult> GetGameDetailsByPage(int pageIndex =1 , int pageSize =10)
         {
             var gameDeatils = await gameInterface.GetGames(pageIndex, pageSize);
             if (!gameDeatils.Items.Any())
